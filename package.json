@@ -1,0 +1,28 @@
+{
+  "name": "js-27",
+  "version": "1.0.0",
+  "description": "",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "dev": "npx parcel src/index.html",
+    "build": "parcel build src/index.html --public-url /tester/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -b gh-pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavlo20031/js-27.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pavlo20031/js-27/issues"
+  },
+  "homepage": "https://github.com/pavlo20031/js-27#readme",
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "gh-pages": "^6.3.0",
+    "parcel": "^2.16.4"
+  }
+}
