@@ -1,0 +1,18 @@
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+p{
+    text-align: center;
+    font-size: 70px;
+}
+button{
+    border: 5px solid rgb(131, 131, 131) ;
+margin-bottom: 30px;
+padding: 20px 30px;
+background-color: black;
+color: white;
+border-radius: 20px;
+}

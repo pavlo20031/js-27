@@ -1,5 +1,51 @@
 import Chart from "chart.js/auto";
+import { success, error, info } from "@pnotify/core/dist/PNotify.js";
+import * as PNotifyMobile from "@pnotify/mobile/dist/PNotifyMobile.js";
+import "@pnotify/mobile/dist/PNotifyMobile.css";
+import "@pnotify/core/dist/BrightTheme.css";
+import "@pnotify/core/dist/PNotify.css";
+import "@pnotify/mobile/dist/PNotifyMobile.css";
 
+// Game
+const keyRef = document.getElementById("key");
+const gameRef = document.getElementById("newGame")
+
+const keys = ["a", "s", "d", "f", "g", "h", "j", "k", "l", "z"];
+let currentKeyIndex = Math.floor(Math.random() * keys.length);
+
+
+keyRef.textContent = keys[currentKeyIndex];
+
+window.addEventListener("keydown", (evt) => {
+  if (evt.key === keys[currentKeyIndex]) {
+    currentKeyIndex = Math.floor(Math.random() * keys.length);
+    keyRef.textContent = keys[currentKeyIndex];
+    success({
+      text: "Молодець! Правильна клавіша.",
+      delay: 1000,
+    });
+  } else {
+    error({
+      text: "Помилка! Спробуй ще.",
+      delay: 1000,
+    });
+  }
+});
+
+window.addEventListener("keypress", (evt) => {
+  evt.preventDefault();
+});
+
+gameRef.addEventListener("click", (evt) => {
+  currentKeyIndex = Math.floor(Math.random() * keys.length);
+  keyRef.textContent = keys[currentKeyIndex];
+  info({
+    text: "Нова гра почалася!",
+    delay: 1000,
+  });
+});
+
+// Graphic
 const chartData = {
   labels: [
     "1",
